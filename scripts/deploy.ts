@@ -10,9 +10,11 @@ const main = async () => {
   // Call the fucntion to mint an NFT.
   const nftMintTxn = await nftContract.makeAnEpicNFT();
   await nftMintTxn.wait();
+  console.log("Minted NFT #1");
 
   const nft2MintTxn = await nftContract.makeAnEpicNFT();
   await nft2MintTxn.wait();
+  console.log("Minted NFT #2");
 };
 
 const runMain = async () => {
