@@ -51,6 +51,8 @@ contract MyEpicNFT is ERC721URIStorage {
         "Judgement"
     ];
 
+    event NewEpicNFTMinted(address sender, uint256 tokenId);
+
     constructor() ERC721("RandomWordsNFT", "RWNFT") {
         console.log("This is my NFT contract.");
     }
@@ -120,5 +122,7 @@ contract MyEpicNFT is ERC721URIStorage {
             newItemId,
             msg.sender
         );
+
+        emit NewEpicNFTMinted(msg.sender, newItemId);
     }
 }
